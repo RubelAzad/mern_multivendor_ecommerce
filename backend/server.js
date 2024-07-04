@@ -4,6 +4,7 @@ require('dotenv').config()
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const { dbConnect } = require('./utiles/db')
 
 
 app.use(cors({
@@ -20,4 +21,5 @@ app.get('/', function(req, res) {
     res.send('Backend Server');
 });
 const port = process.env.PORT;
+dbConnect();
 app.listen(port, () => console.log(`server is running on port ${port}`));

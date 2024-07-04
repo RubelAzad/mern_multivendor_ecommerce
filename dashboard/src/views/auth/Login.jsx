@@ -16,7 +16,7 @@ const Login = () => {
     }
     const submit = (e) => {
         e.preventDefault()
-        console.log(state)
+        //console.log(state)
     }
 
 
