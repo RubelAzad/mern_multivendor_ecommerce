@@ -41,9 +41,9 @@ const AdminLogin = () => {
         if(successMessage){
             toast.success(successMessage)
             dispatch(messageClear())
-            navigate('/')
+            
         }
-    },[errorMessage,successMessage])
+    },[errorMessage,successMessage,dispatch, navigate])
 
 
     return (

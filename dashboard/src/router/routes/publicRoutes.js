@@ -1,10 +1,15 @@
 import { lazy } from "react";
+import MainLayout from "../../layout/MainLayout";
 
 const AdminLogin = lazy(() => import("../../views/auth/AdminLogin"));
 const Login = lazy(() => import("../../views/auth/Login"));
 const Register = lazy(()=>import("../../views/auth/Register"));
 
 const publicRoutes = [
+    {
+        path: "/",
+        element: <MainLayout />
+    },
     {
         path: "/login",
         element: <Login />
