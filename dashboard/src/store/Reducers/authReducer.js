@@ -7,8 +7,9 @@ export const admin_login = createAsyncThunk('auth/admin_login', async (info,{rej
     try{
         const {data} = await api.post('/admin-login', info,{withCredentials:true})
         
-        //console.log(data)
-        localStorage.setItem('accessToken', data.data.token)
+        
+        localStorage.setItem('accessToken', data.token)
+        
         return fulfillWithValue(data);
 
     }catch(error){
@@ -34,14 +35,16 @@ export const authReducer = createSlice({
         builder
             .addCase(admin_login.pending, (state, {payload}) => {
                 state.loader = true
+                console.log(state)
             })
             .addCase(admin_login.rejected, (state, {payload}) => {
                 state.loader = false
-                state.errorMessage = payload.data.error
+                state.errorMessage = payload ? payload.error : 'An error occurred';
             })
             .addCase(admin_login.fulfilled, (state, {payload}) => {
                 state.loader = false
-                state.successMessage = payload.data.message
+                console.log(payload)
+                state.successMessage = payload.message
             })
     }
 })

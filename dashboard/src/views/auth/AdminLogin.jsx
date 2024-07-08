@@ -22,6 +22,7 @@ const AdminLogin = () => {
     }
     const submit = (e) => {
         e.preventDefault()
+        //console.log(state)
         dispatch(admin_login(state))
     }
 
@@ -41,6 +42,7 @@ const AdminLogin = () => {
         if(successMessage){
             toast.success(successMessage)
             dispatch(messageClear())
+            navigate('/')
             
         }
     },[errorMessage,successMessage,dispatch, navigate])
