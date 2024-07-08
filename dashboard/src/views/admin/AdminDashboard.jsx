@@ -179,6 +179,45 @@ const AdminDashboard = () => {
                 </div>
                     
             </div>
+            <div className='w-full p-4 bg-[#6a5fdf] rounded-md mt-6'>
+                <div className='flex justify-between items-center'>
+                    <h2 className='font-semibold text-lg text-[#d0d2d6] pb-3'>Recent Orders</h2>
+                    <Link className='px-3 py-1 bg-[#d0d2d6] text-[#6a5fdf] font-semibold rounded-md text-sm'>View All</Link>
+                </div>
+                <div className='relative overflow-x-auto'>
+                    <table className='w-full text-sm text-[#d0d2d6] text-left'>
+                        <thead className='text-sm text-[#d0d2d6] uppercase border-b border-slate-700'>
+                            <tr>
+                                <th scope='col' className='px-4 py-3'>Order ID</th>
+                                <th scope='col' className='px-4 py-3'>Price</th>
+                                <th scope='col' className='px-4 py-3'>Payment Status</th>
+                                <th scope='col' className='px-4 py-3'>Order Status</th>
+                                <th scope='col' className='px-4 py-3'>Active</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                [1,2,3,4,5,6,7,8,9,10].map((item, index) =>
+                                    <tr key={index}>
+                                        <td scope='row' className='px-4 py-3 font-medium whitespace-nowrap'>#12345</td>
+                                        <td scope='row' className='px-4 py-3 font-medium whitespace-nowrap'>50000</td>
+                                        <td scope='row' className='px-4 py-3 font-medium whitespace-nowrap'>Pending</td>
+                                        <td scope='row' className='px-4 py-3 font-medium whitespace-nowrap'>Pending</td>
+                                        <td scope='row' className='px-4 py-3 font-medium whitespace-nowrap'>
+                                        <Link>View</Link></td>
+                                    </tr>
+
+                                )
+                            }
+                            
+                            
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
 
         </div>
     );
