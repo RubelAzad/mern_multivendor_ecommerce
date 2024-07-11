@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Pagination from '../Pagination' // Adjust the import path if needed
-import { FaEdit, FaEye, FaImage, FaTrash } from 'react-icons/fa';
-import {IoMdCloseCircle} from 'react-icons/io'
+import { FaEye } from 'react-icons/fa';
 
 const Sellers = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [perPage, setPerPage] = useState(5);
-    const [show, setShow] = useState(false);
+    //const [show, setShow] = useState(false);
     const totalItems = 50;
 
     return (
@@ -19,7 +18,7 @@ const Sellers = () => {
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="20">20</option>
-                                <option value="20">50</option>
+                                <option value="50">50</option>
                             </select>
                             <input type="search" className='px-3 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text-[#d0d2d6]' />
                         </div>
@@ -42,17 +41,17 @@ const Sellers = () => {
                                     {
                                         [1,2,3,4,5].map((item, index) =>
                                             <tr key={index}>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>{item}</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>{item}</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>
                                                     <img className='w-[40px] h-[40px] rounded' src={`http://localhost:3000/images/category/${item}.jpg`} alt='category'/>
                                                 </td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>Abul Kalam Azad</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>Coder Shop</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>Pending</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>rubelazad123@gmail.com</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>Rajshahi</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>Pabna</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>Abul Kalam Azad</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>Coder Shop</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>Pending</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>rubelazad123@gmail.com</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>Rajshahi</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>Pabna</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>
                                                     <div className='flex justify-start items-center gap-4'>
                                                     <Link className='p-[6px] bg-green-500 rounded-md hover:shadow-lg hover:shadow-green-500/50'><FaEye/></Link>
                                                     </div>

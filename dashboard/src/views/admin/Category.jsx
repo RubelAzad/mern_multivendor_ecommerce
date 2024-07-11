@@ -44,12 +44,12 @@ const Category = () => {
                                     {
                                         [1,2,3,4,5].map((item, index) =>
                                             <tr key={index}>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>{item}</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>{item}</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>
                                                     <img className='w-[40px] h-[40px] rounded' src={`http://localhost:3000/images/category/${item}.jpg`} alt='category'/>
                                                 </td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>Tshirt</td>
-                                                <td scope='row' className='px-4 py-1 font-medium whitespace-nowrap'>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>Tshirt</td>
+                                                <td className='px-4 py-1 font-medium whitespace-nowrap'>
                                                     <div className='flex justify-start items-center gap-4'>
                                                     <Link className='p-[6px] bg-yellow-500 rounded-md hover:shadow-lg hover:shadow-yellow-500/50'><FaEdit/></Link>
                                                     <Link className='p-[6px] bg-red-500 rounded-md hover:shadow-lg hover:shadow-red-500/50'><FaTrash/></Link>
