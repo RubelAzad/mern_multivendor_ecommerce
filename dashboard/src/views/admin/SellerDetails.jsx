@@ -7,7 +7,7 @@ const SellerDetails = () => {
             <div className='w-full p-4 bg-[#6a5fdf] rounded-md'>
                 <div className='w-full flex flex-wrap text-[#d0d2d6] '>
                     <div className='w-3/12 flex justify-center items-center py-3'>
-                        <img className='w-full h-[300px]' src='http://localhost:3000/images/user.png' alt='seller image' />
+                        <img className='w-full h-[300px]' src='http://localhost:3000/images/user.png' alt='sellerimage' />
 
                     </div>
                     <div className='w-4/12'>
