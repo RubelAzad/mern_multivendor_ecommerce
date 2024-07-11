@@ -33,14 +33,14 @@ const Orders = () => {
                             </div>
                         </div>
                         {/* Example rows for display */}
-                        {[...Array(perPage)].map((_, idx) => (
+                        {[...Array(perPage)].map((item, idx) => (
                             <div className='text-[#d0d2d6]' key={idx}>
                                 <div className='flex justify-between items-start border-b border-slate-700'>
                                     <div className='py-3 w-[25%] font-medium whitespace-nowrap'>#123</div>
                                     <div className='py-3 w-[13%] font-medium whitespace-nowrap'>4000 BDT</div>
                                     <div className='py-3 w-[25%] font-medium whitespace-nowrap'>Pending</div>
                                     <div className='py-3 w-[25%] font-medium whitespace-nowrap'>Pending</div>
-                                    <div className='py-3 w-[18%] font-medium whitespace-nowrap'><Link>View</Link></div>
+                                    <div className='py-3 w-[18%] font-medium whitespace-nowrap'><Link to={`/admin/dashboard/order/details/1`}>View</Link></div>
                                     <div onClick={() => setShow(!show)} className='py-3 w-[8%] font-medium whitespace-nowrap'><LuArrowDownSquare /></div>
                                 </div>
                                 <div className={show ? 'block border-b border-slate-700 bg-[#827efc]' : 'hidden'}>
