@@ -33,6 +33,7 @@ const AddProduct = () => {
     const [state, setState] = useState({
         product_name: '',
         description: '',
+        category: '',
         discount: '',
         price: '',
         brand_name: '',
@@ -87,7 +88,7 @@ const AddProduct = () => {
                         <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
                             <div className='flex flex-col w-full gap-1 relative'>
                                 <label htmlFor='category'>Category</label>
-                                <input readOnly onClick={() => setCateShow(!cateShow)}  onChange={inputHandle} value={category} type='text' id='category' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='Category' />
+                                <input readOnly onClick={() => setCateShow(!cateShow)}  onChange={inputHandle} value={category} type='text' id='category' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='--Select Category--' />
 
                                 <div className={`absolute top-[101%] bg-slate-800 w-full transition-all ${cateShow ? 'scale-100' : 'scale-0'}`}>
                                     <div className='w-full px-4 py-2 fixed'>
@@ -114,6 +115,22 @@ const AddProduct = () => {
                             <div className='flex flex-col w-full gap-1'>
                                 <label htmlFor='stock'>Product Stock</label>
                                 <input  onChange={inputHandle} value={state.stock} type='text' name='stock' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='Stock' />
+                            </div>
+                        </div>
+                        <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
+                            <div className='flex flex-col w-full gap-1'>
+                                <label htmlFor='price'>Price</label>
+                                <input  onChange={inputHandle} value={state.price} type='number' name='price' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='Price' />
+                            </div>
+                            <div className='flex flex-col w-full gap-1'>
+                                <label htmlFor='discount'>Discount</label>
+                                <input  onChange={inputHandle} value={state.discount} type='number' name='discount' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='% Discount' />
+                            </div>
+                        </div>
+                        <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
+                            <div className='flex flex-col w-full gap-1'>
+                                <label htmlFor='description'>Description</label>
+                                <textarea cols='10' rows='4' onChange={inputHandle} value={state.description} type='number' name='description' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='Description'></textarea>
                             </div>
                         </div>
                         
