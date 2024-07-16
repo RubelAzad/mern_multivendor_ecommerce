@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IoMdCloseCircle, IoMdImages } from 'react-icons/io';
 
 const AddProduct = () => {
 
@@ -64,6 +65,44 @@ const AddProduct = () => {
 
     }
 
+    const [images, setImages] = useState([])
+    const [imageShow, setImageShow] = useState([])
+    const imageHandle=(e)=>{
+        const files = e.target.files
+        const length = files.length
+
+        if(length>0){
+            setImages([...images, ...files])
+            let imageUrl =[]
+            for(let i=0; i<length; i++){
+                imageUrl.push({url: URL.createObjectURL(files[i])})
+
+            }
+            setImageShow([...imageShow, ...imageUrl])
+        }
+    }
+    //console.log(imageShow)
+    //console.log(images)
+    const changeImage = (img, index) => {
+        if(img){
+            let tempUrl = imageShow
+            let tempImages = images
+
+            tempImages[index] = img
+            tempUrl[index] = {url: URL.createObjectURL(img)}
+            setImageShow([...tempUrl])
+            setImages([...tempImages])
+
+        }
+    }
+    const removeImage = (i) => {
+        const filterImage = images.filter((img,index) => index !== i);
+        const filterImageUrl = imageShow.filter((img,index) => index !== i);
+        setImages(filterImage);
+        setImageShow(filterImageUrl);                                             
+    }
+
+
     return (
         <div className='px-2 lg:px-7 pt-5 '>
             <div className='w-full p-4 bg-[#6a5fdf] rounded-md'>
@@ -127,11 +166,35 @@ const AddProduct = () => {
                                 <input  onChange={inputHandle} value={state.discount} type='number' name='discount' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='% Discount' />
                             </div>
                         </div>
-                        <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
+                        <div className='flex flex-col mb-5 md:flex-row gap-4 w-full text-[#d0d2d6] '>
                             <div className='flex flex-col w-full gap-1'>
                                 <label htmlFor='description'>Description</label>
                                 <textarea cols='10' rows='4' onChange={inputHandle} value={state.description} type='number' name='description' className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 bg-transparent rounded-md' placeholder='Description'></textarea>
                             </div>
+                        </div>
+                        <div className='grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-3 sm:gap-4 md:gap-4 gap-3 w-full text-[#d0d2d6] mb-4'>
+                            {
+                                imageShow.map((img,i) =><div className='h-[180px] relative'>
+                                    <label htmlFor={i}>
+                                        <img src={img.url} className='w-full h-full rounded-sm' alt='product-image'/>
+
+                                    </label>
+                                    <input onChange={(e) => changeImage(e.target.files[0],i)} type='file' id={i} className='hidden'/>
+                                    <span onClick={() => removeImage(i)} className='p-2 z-10 cursor-pointer bg-slate-700 hover:shadow-lg hover:shadow-slate-400/50 text-white absolute top-1 right-1 rounded-full'><IoMdCloseCircle/></span>
+                                    
+                                </div>)
+                            }
+                            <label className='flex justify-center items-center flex-col h-[180px] cursor-pointer border border-dashed hover:border-red-500 w-full text-[#d0d2d6]' htmlFor='image'>
+                                <span><IoMdImages/></span>
+                                <span>Upload Product Image</span>
+                            </label>
+                            <input multiple type='file' name='image' id='image' className='hidden' onChange={imageHandle}/>
+                            
+                        </div>
+                        <div className='flex'>
+                            <button   className='bg-red-500 w-[180px] hover:shadow-red-300/50 hover:shadow-lg text-white rounded-md px-7 py-2 mb-3'>
+                                Add Product
+                            </button>
                         </div>
                         
                     </form>
