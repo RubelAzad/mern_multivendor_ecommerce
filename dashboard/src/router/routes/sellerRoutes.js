@@ -5,6 +5,7 @@ const AddProduct = lazy(()=>import("./../../views/seller/AddProduct"))
 const AllProduct = lazy(()=>import("./../../views/seller/Products"))
 const DiscountProducts = lazy(()=>import("./../../views/seller/DiscountProducts"))
 const Order = lazy(()=>import("./../../views/seller/Order"))
+const Payments = lazy(()=>import("./../../views/seller/Payments"))
 
 export const sellerRoutes = [
     {
@@ -35,6 +36,11 @@ export const sellerRoutes = [
     {
         path: "seller/dashboard/orders",
         element: <Order/>,
+        ability: ['seller']
+    },
+    {
+        path: "seller/dashboard/payments",
+        element: <Payments/>,
         ability: ['seller']
     }
 ]
