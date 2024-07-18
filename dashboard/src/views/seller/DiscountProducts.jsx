@@ -4,7 +4,7 @@ import Pagination from '../Pagination' // Adjust the import path if needed
 import { FaEdit, FaEye, FaTrash } from 'react-icons/fa';
 import Search from '../components/Search';
 
-const Products = () => {
+const DiscountProducts = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [perPage, setPerPage] = useState(5);
@@ -14,11 +14,8 @@ const Products = () => {
 
     return (
         <div className='px-2 lg:px-7 pt-5'>
-            <h2 className='text-[#000000] font-bold text-lg mb-3'>All Product</h2>
-            <div className='flex lg:hidden justify-between items-center mb-5 p-4 bg-[#6a5fdf] rounded-md'>
+            <h1 className='text-[#000000] font-bold text-lg mb-3'>Discount Product</h1>
             
-
-            </div>
             <div className='flex flex-wrap w-full'>
                 <div className='w-full'>
                     <div className='w-full p-4 bg-[#6a5fdf] rounded-md'>
@@ -84,4 +81,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default DiscountProducts;

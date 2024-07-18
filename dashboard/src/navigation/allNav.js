@@ -89,7 +89,7 @@ export const allNav = [
         title: 'Discount Product',
         icon: <AiFillDashboard size={20} />,
         role: 'seller',
-        path: '/seller/dashboard/discount-product'
+        path: '/seller/dashboard/discount-products'
     },
     {
         id: 13,
